@@ -1,0 +1,5 @@
+# PREVIEW BUILD. While this sits on a preview URL it is kept out of search so it
+# cannot compete with the live alpinesnowandicemgmt.com. To go live: change the
+# line below to "Allow: /" and delete the robots meta tag from every page.
+User-agent: *
+Disallow: /
