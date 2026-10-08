@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Professional Snow Removal Services | Alpine Snow and Ice Management</title>
-<meta name="description" content="Commercial snow management, HOA snow removal, snow hauling and disposal, de-icing and anti-icing, emergency response and budget packages. Per push, per event or fixed seasonal contracts.">
+<title>Snow Removal Services | Alpine Snow and Ice Management</title>
+<meta name="description" content="Commercial and HOA snow management, hauling and disposal, de-icing, emergency response and budget packages. Per push, per event or fixed seasonal contracts.">
 <link rel="canonical" href="https://alpinesnowandicemgmt.com/services/">
 <meta name="robots" content="noindex, nofollow"><!-- PREVIEW ONLY. Delete this line and set robots.txt to Allow when this replaces the live site. -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Professional Snow Removal Services | Alpine Snow and Ice Management">
-<meta property="og:description" content="Commercial snow management, HOA snow removal, snow hauling and disposal, de-icing and anti-icing, emergency response and budget packages. Per push, per event or fixed seasonal contracts.">
+<meta property="og:title" content="Snow Removal Services | Alpine Snow and Ice Management">
+<meta property="og:description" content="Commercial and HOA snow management, hauling and disposal, de-icing, emergency response and budget packages. Per push, per event or fixed seasonal contracts.">
 <meta property="og:url" content="https://alpinesnowandicemgmt.com/services/">
 <meta property="og:image" content="https://alpinesnowandicemgmt.com/asi/img/hero.jpg">
 <meta name="theme-color" content="#1B1C1F">
@@ -43,7 +43,9 @@
  </div>
 </section>
 <section class="sec">
- <div class="w"><div class="grid g3"><article class="card">
+ <div class="w">
+  <h2 style="margin-bottom:30px">The six services</h2>
+  <div class="grid g3"><article class="card">
   <img src="../asi/img/commercial.jpg" alt="Commercial Snow Management" loading="lazy" width="1100" height="825">
   <div class="in"><h3>Commercial Snow Management</h3><p>Snow plowing, shoveling and salting for businesses of all sizes. We work around your schedule to ensure minimal disruption to your operations.</p>
   <a class="more" href="../commercial-snow-mgmt/">Learn more</a></div></article><article class="card">
@@ -61,7 +63,8 @@
   <a class="more" href="../emergency-snow-removal/">Learn more</a></div></article><article class="card">
   <img src="../asi/img/packages.jpg" alt="Snow Removal Packages" loading="lazy" width="1100" height="825">
   <div class="in"><h3>Snow Removal Packages</h3><p>A range of packages to fit any budget, from a basic plan to a comprehensive one that includes snow hauling and disposal.</p>
-  <a class="more" href="../affordable-snow-removal/">Learn more</a></div></article></div></div>
+  <a class="more" href="../affordable-snow-removal/">Learn more</a></div></article></div>
+ </div>
 </section>
 <section class="sec b3">
  <div class="w">
@@ -92,7 +95,7 @@
    <input type="hidden" name="_captcha" value="false">
    <input type="hidden" name="_template" value="table">
    <input type="hidden" name="_next" value="https://alpinesnowandicemgmt.com/thanks/">
-   <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+   <input type="text" name="_honey" id="f-honey" aria-label="Leave this field empty" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
    <input type="hidden" name="Page" value="Services page">
    <div><label for="f-name">Name</label><input id="f-name" name="Name" type="text" required autocomplete="name"></div>
    <div><label for="f-co">Company or HOA</label><input id="f-co" name="Company" type="text" autocomplete="organization"></div>
@@ -120,15 +123,15 @@
     <span style="font-size:14px">(844) 791-7669</span></p>
     <p><a href="mailto:info@alpinesnowandicemgmt.com">info@alpinesnowandicemgmt.com</a><br>New York, New York, United States</p>
    </div>
-   <div><h4>Services</h4><ul><li><a href="../commercial-snow-mgmt/">Commercial Snow Management</a></li><li><a href="../hoa-snow-removal/">HOA Snow Removal</a></li><li><a href="../snow-hauling-and-disposal/">Snow Hauling and Disposal</a></li><li><a href="../de-icing-and-anti-icing/">De-Icing and Anti-Icing</a></li><li><a href="../emergency-snow-removal/">Emergency Snow Removal</a></li><li><a href="../affordable-snow-removal/">Snow Removal Packages</a></li></ul></div>
-   <div><h4>Company</h4><ul>
+   <div><h2 class="fh">Services</h2><ul><li><a href="../commercial-snow-mgmt/">Commercial Snow Management</a></li><li><a href="../hoa-snow-removal/">HOA Snow Removal</a></li><li><a href="../snow-hauling-and-disposal/">Snow Hauling and Disposal</a></li><li><a href="../de-icing-and-anti-icing/">De-Icing and Anti-Icing</a></li><li><a href="../emergency-snow-removal/">Emergency Snow Removal</a></li><li><a href="../affordable-snow-removal/">Snow Removal Packages</a></li></ul></div>
+   <div><h2 class="fh">Company</h2><ul>
      <li><a href="../index.html">Home</a></li>
      <li><a href="../services/">All services</a></li>
      <li><a href="../faq/">Frequently asked questions</a></li>
      <li><a href="../contact/">Contact</a></li>
      <li><a href="../#quote">Get a quote</a></li>
    </ul>
-   <h4 style="margin-top:26px">Hours</h4>
+   <h2 class="fh" style="margin-top:26px">Hours</h2>
    <p style="font-size:15px">Dispatch 24 hours a day during winter weather. Office enquiries answered the same day.</p>
    </div>
   </div>
@@ -148,6 +151,15 @@
  if(b&&h){b.addEventListener('click',function(){
    var o=h.classList.toggle('open'); b.setAttribute('aria-expanded', o?'true':'false');
  });}
+ // FormSubmit needs an absolute _next. Resolve it against whatever host the site is
+ // on, so the thank you page works on the preview and on the live domain with no edit.
+ try{
+  var brand=document.querySelector('.brand'), f=document.querySelector('form.q');
+  if(brand&&f&&f._next){
+   var home=new URL(brand.getAttribute('href'), location.href);
+   f._next.value=new URL('thanks/', home).href;
+  }
+ }catch(e){}
 })();
 </script>
 </body>
