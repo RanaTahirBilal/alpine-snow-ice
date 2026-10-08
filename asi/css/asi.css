@@ -170,8 +170,8 @@ form.q button:hover{background:var(--amber-hi)}
 .ftr{background:var(--bg4);border-top:1px solid var(--line);padding:56px 0 110px}
 .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
 .ftr img.logo{width:170px;margin-bottom:16px}
-.ftr h4{font-family:var(--h);font-size:13px;letter-spacing:.16em;text-transform:uppercase;
-  color:#fff;margin:0 0 14px}
+.ftr .fh{font-family:var(--h);font-size:13px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:#fff;margin:0 0 14px;line-height:1.2}
 .ftr ul{list-style:none;margin:0;padding:0}
 .ftr li{margin-bottom:9px}
 .ftr a{color:var(--dim);text-decoration:none;font-size:15.5px}
@@ -196,6 +196,17 @@ form.q button:hover{background:var(--amber-hi)}
   .trust li:nth-child(1),.trust li:nth-child(2){border-bottom:1px solid var(--line)}
   .plans{grid-template-columns:1fr}
   .qgrid{grid-template-columns:1fr;gap:32px}
+}
+/* WCAG 2.2 AA target size, 2.5.8: nothing tapped is under 24px tall. The footer
+   links measured 18px and the breadcrumb 15px, so they get real padding on touch
+   screens rather than a bigger font that would change the design. */
+@media(hover:none),(max-width:860px){
+  .ftr li{margin-bottom:2px}
+  .ftr li a{display:inline-block;padding:9px 0;min-height:24px}
+  .ftr p a{display:inline-block;padding:5px 0}
+  .card .more{display:inline-block;padding:11px 0;margin-top:0}
+  .eyebrow a{display:inline-block;padding:7px 0}
+  .callout a{display:inline-block;padding:5px 0}
 }
 @media(max-width:860px){
   .split,.split.narrow{grid-template-columns:1fr;gap:28px}
