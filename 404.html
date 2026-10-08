@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found | Alpine Snow and Ice Management</title>
-<meta name="description" content="That page does not exist.">
+<meta name="description" content="That page has moved or does not exist. Every snow and ice service is listed on the services page, and the 24 hour line is (844) 791-SNOW.">
 <link rel="canonical" href="https://alpinesnowandicemgmt.com/404.html">
 <meta name="robots" content="noindex, nofollow"><!-- PREVIEW ONLY. Delete this line and set robots.txt to Allow when this replaces the live site. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Page not found | Alpine Snow and Ice Management">
-<meta property="og:description" content="That page does not exist.">
+<meta property="og:description" content="That page has moved or does not exist. Every snow and ice service is listed on the services page, and the 24 hour line is (844) 791-SNOW.">
 <meta property="og:url" content="https://alpinesnowandicemgmt.com/404.html">
 <meta property="og:image" content="https://alpinesnowandicemgmt.com/asi/img/hero.jpg">
 <meta name="theme-color" content="#1B1C1F">
@@ -49,15 +49,15 @@
     <span style="font-size:14px">(844) 791-7669</span></p>
     <p><a href="mailto:info@alpinesnowandicemgmt.com">info@alpinesnowandicemgmt.com</a><br>New York, New York, United States</p>
    </div>
-   <div><h4>Services</h4><ul><li><a href="commercial-snow-mgmt/">Commercial Snow Management</a></li><li><a href="hoa-snow-removal/">HOA Snow Removal</a></li><li><a href="snow-hauling-and-disposal/">Snow Hauling and Disposal</a></li><li><a href="de-icing-and-anti-icing/">De-Icing and Anti-Icing</a></li><li><a href="emergency-snow-removal/">Emergency Snow Removal</a></li><li><a href="affordable-snow-removal/">Snow Removal Packages</a></li></ul></div>
-   <div><h4>Company</h4><ul>
+   <div><h2 class="fh">Services</h2><ul><li><a href="commercial-snow-mgmt/">Commercial Snow Management</a></li><li><a href="hoa-snow-removal/">HOA Snow Removal</a></li><li><a href="snow-hauling-and-disposal/">Snow Hauling and Disposal</a></li><li><a href="de-icing-and-anti-icing/">De-Icing and Anti-Icing</a></li><li><a href="emergency-snow-removal/">Emergency Snow Removal</a></li><li><a href="affordable-snow-removal/">Snow Removal Packages</a></li></ul></div>
+   <div><h2 class="fh">Company</h2><ul>
      <li><a href="index.html">Home</a></li>
      <li><a href="services/">All services</a></li>
      <li><a href="faq/">Frequently asked questions</a></li>
      <li><a href="contact/">Contact</a></li>
      <li><a href="#quote">Get a quote</a></li>
    </ul>
-   <h4 style="margin-top:26px">Hours</h4>
+   <h2 class="fh" style="margin-top:26px">Hours</h2>
    <p style="font-size:15px">Dispatch 24 hours a day during winter weather. Office enquiries answered the same day.</p>
    </div>
   </div>
@@ -77,6 +77,15 @@
  if(b&&h){b.addEventListener('click',function(){
    var o=h.classList.toggle('open'); b.setAttribute('aria-expanded', o?'true':'false');
  });}
+ // FormSubmit needs an absolute _next. Resolve it against whatever host the site is
+ // on, so the thank you page works on the preview and on the live domain with no edit.
+ try{
+  var brand=document.querySelector('.brand'), f=document.querySelector('form.q');
+  if(brand&&f&&f._next){
+   var home=new URL(brand.getAttribute('href'), location.href);
+   f._next.value=new URL('thanks/', home).href;
+  }
+ }catch(e){}
 })();
 </script>
 </body>
